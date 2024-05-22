@@ -1,0 +1,38 @@
+<div class="row">
+    <div *ngIf="sidebarStatus" class="col-2 shadow d-flex aligin-items-center
+    flex-column">
+       <h4 class=" mt-5 text-center text-white fw-bolder"><a routerLink="/dashboard">Home</a></h4>
+        <h4 class=" my-4 text-center text-light  fw-bolder"><a routerLink="/users">User</a></h4>
+    </div>
+    <div class="col-9">
+        <div class="row">
+            <p class="m-3 text-end fw-bolder" >Logged at : {{adminLoggedStatus | date :'medium' }} </p>
+
+            <div class="col-8">
+                <div class="card m-5 d-flex  ">
+                    <h1> <i (click)="menubarClicked()" class="fa-solid fa-bars fs-1 me-4 m-3"></i>Welcome {{adminName}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <app-calender></app-calender>
+                    </div>
+                    <div class="col-6">
+                        <app-pie-chart></app-pie-chart>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="admin-card text-center shadow m-3 p-3 mt-5">
+                    <h3>Admin Details</h3>
+                    <img width="200px" height="200px" src="https://icon-library.com/images/user-icon-image/user-icon-image-0.jpg" alt="">
+                    <input [(ngModel)]="adminDetails.name" name="adminName" type="text" placeholder="Name" class="form-control my-3">
+                    <input [(ngModel)]="adminDetails.password" name="adminpswd" type="password" placeholder="Password" class=" mb-3 form-control">
+                    <div class="m-4 button text-center">
+                        <button class="btn btn-success" (click)="updateAdmin()">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

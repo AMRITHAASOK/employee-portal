@@ -1,0 +1,25 @@
+<div class="container shadow rounded m-5 p-5">
+    <div class="row">
+        <div class="col-6">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/admin-login-5146573-4297423.png" alt="">
+        </div>
+        <div class="col-6">
+
+            <form #loginform="ngForm" (ngSubmit)="login()" class="border shadow m-5 p-5 text-center bg-white">
+                <!-- {{email}} ,{{password}} -->
+                <h3 class="m-3">Login here...</h3>
+                <input type="text"  placeholder="Email Address" class="form-control" required email name="email" 
+                [(ngModel)]="email" #userEmail="ngModel" id="">
+                <div *ngIf="userEmail.invalid && userEmail.touched" class="text-danger fw-bolder">*Invalid Email</div>
+                <br>
+                <input type="password" placeholder="Password" class="form-control" required pattern="[a-zA-Z0-9]*" name="password" [(ngModel)]="password" #userPassword="ngModel" id="">
+                <div *ngIf="userPassword.invalid && userPassword.touched" class="text-danger fw-bolder">*Invalid Passord</div>
+                <br>
+                <div class="text-center p-4">
+                    <button [disabled]="loginform.invalid" type="submit" class="btn btn-success">Sign In</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.col-2{
+    background-color: rgba(139, 0, 139, 0.63);
+    height: 800px;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.card{
+    background-color: rgba(137, 43, 226, 0.439);
+    height: 200px;
+}
